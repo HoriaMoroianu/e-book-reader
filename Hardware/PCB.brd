@@ -91,6 +91,19 @@
 <wire x1="20.00008125" y1="109.70005" x2="68.00008125" y2="109.70001875" width="0" layer="20" locked="yes"/>
 <wire x1="20.00008125" y1="111.20005" x2="20.00008125" y2="109.70005" width="0" layer="20" locked="yes"/>
 <wire x1="0.00008125" y1="111.20006875" x2="20.00008125" y2="111.20005" width="0" layer="20" locked="yes"/>
+<dimension x1="24" y1="108.90905" x2="0" y2="110.5" x3="12" y3="114" textsize="1.778" layer="27" dtype="horizontal"/>
+<dimension x1="49" y1="108.90903125" x2="0" y2="108.5" x3="24.5" y3="117.5" textsize="1.778" layer="27" dtype="horizontal"/>
+<dimension x1="64" y1="108.9090125" x2="0" y2="107" x3="32" y3="122" textsize="1.778" layer="27" dtype="horizontal"/>
+<dimension x1="92.20008125" y1="111.2" x2="0" y2="105" x3="46.100040625" y3="127" textsize="1.778" layer="27" dtype="horizontal"/>
+<dimension x1="12.72605" y1="58.12" x2="11.5" y2="111" x3="-8.5" y3="84.56" textsize="1.778" layer="27" dtype="vertical"/>
+<dimension x1="92.20008125" y1="111.2" x2="108.5" y2="67.2" x3="181.5" y3="89.2" textsize="1.778" layer="27" dtype="vertical"/>
+<dimension x1="5.3160625" y1="95.9" x2="2" y2="111.2" x3="-2.5" y3="103.55" textsize="1.778" layer="27" dtype="vertical"/>
+<dimension x1="170.20005" y1="67.19995" x2="92.2" y2="72.8" x3="131.200025" y3="75" textsize="1.778" layer="27" dtype="horizontal" width="0.127" precision="1"/>
+<dimension x1="170.2" y1="-0.00005" x2="165.7" y2="67.2" x3="192.5" y3="33.599975" textsize="1.778" layer="27" dtype="vertical" width="0.127" precision="1"/>
+<dimension x1="168.357025" y1="54.3" x2="168" y2="0" x3="186" y3="27.15" textsize="1.778" layer="27" dtype="vertical" width="0.127" precision="1"/>
+<dimension x1="165.4750125" y1="19.3" x2="168.5" y2="0" x3="178.5" y3="9.65" textsize="1.778" layer="27" dtype="vertical" width="0.127" precision="1"/>
+<dimension x1="95.200009375" y1="10" x2="99" y2="0" x3="98.5" y3="5" textsize="1.778" layer="27" dtype="vertical" width="0.127" precision="1"/>
+<dimension x1="95.15" y1="2.05" x2="77" y2="2" x3="86.075" y3="-5.45" textsize="1.778" layer="27" dtype="horizontal" width="0.127" precision="1"/>
 </plain>
 <libraries>
 <library name="tsc-lib-v1" urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ">
@@ -1557,12 +1570,12 @@ Source: www.farnell.com/datasheets/49238.pdf</description>
 <attribute name="VAL" value="68uH" x="53.45" y="-35.27" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="PFMF.050.1" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32C6_VARISTOR_CT/CN1812" value="ESP32C6_VARISTORCN1812" x="158.625" y="58.5" smashed="yes" rot="R180" grouprefs="USB_CON">
-<attribute name="NAME" x="154.725" y="60.5000125" size="1.016" layer="25"/>
+<attribute name="NAME" x="154.875" y="60.9000125" size="1.016" layer="25"/>
 <attribute name="POPULARITY" value="0" x="112.905" y="111.84" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="Q1" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_SPARKFUN-DISCRETESEMI_SOT23-3" value="20V/4.2A/52mΩ/1.4W" x="143.65" y="55.05" smashed="yes" rot="R180" grouprefs="LDO_VOLT_REG">
 <attribute name="DMG2305UX-7" value="" x="128.41" y="109.66" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="141.17" y="54.481" size="1.016" layer="25" ratio="20" align="bottom-center"/>
+<attribute name="NAME" x="140.92" y="54.681" size="1.016" layer="25" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="TRAN-14388" x="128.41" y="109.66" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="Q2" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_SPARKFUN-DISCRETESEMI_SOT23-3" value="20V/4.2A/52mΩ/1.4W" x="98" y="21.5242" smashed="yes" rot="R180" grouprefs="EPD_PWR">
@@ -1588,7 +1601,7 @@ Source: www.farnell.com/datasheets/49238.pdf</description>
 <attribute name="SPICEPREFIX" value="R" x="18.92" y="46.05" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R10" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_EAGLE-LTSPICE_R0402" value="10k" x="25.955" y="89.02" smashed="yes">
-<attribute name="NAME" x="27.82" y="88.155" size="1.27" layer="25"/>
+<attribute name="NAME" x="27.82" y="88.155" size="1.016" layer="25"/>
 <attribute name="SPICEMODEL" value="NONE" x="25.955" y="89.02" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="25.955" y="89.02" size="1.778" layer="27" display="off"/>
 </element>
@@ -1653,22 +1666,22 @@ Source: www.farnell.com/datasheets/49238.pdf</description>
 <attribute name="SPICEPREFIX" value="R" x="91.8566" y="32.35" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R5" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_EAGLE-LTSPICE_R0402" value="10k" x="10.88" y="33.0208" smashed="yes" rot="R90">
-<attribute name="NAME" x="10.755" y="31.6142" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="10.755" y="31.6142" size="1.016" layer="25" rot="R270"/>
 <attribute name="SPICEMODEL" value="NONE" x="10.88" y="33.0208" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="10.88" y="33.0208" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R6" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_EAGLE-LTSPICE_R0402" value="10k" x="25.955" y="92.3683" smashed="yes">
-<attribute name="NAME" x="27.82" y="92.0033" size="1.27" layer="25"/>
+<attribute name="NAME" x="27.82" y="92.0033" size="1.016" layer="25"/>
 <attribute name="SPICEMODEL" value="NONE" x="25.955" y="92.3683" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="25.955" y="92.3683" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R7" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_EAGLE-LTSPICE_R0402" value="10k" x="25.955" y="91" smashed="yes">
-<attribute name="NAME" x="27.82" y="90.635" size="1.27" layer="25"/>
+<attribute name="NAME" x="27.87" y="90.085" size="1.016" layer="25"/>
 <attribute name="SPICEMODEL" value="NONE" x="25.955" y="91" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="25.955" y="91" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R8" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="ESP32_WROVER_EAGLE-LTSPICE_R0402" value="10k" x="25.955" y="94" smashed="yes">
-<attribute name="NAME" x="27.82" y="94.135" size="1.27" layer="25"/>
+<attribute name="NAME" x="27.82" y="94.135" size="1.016" layer="25"/>
 <attribute name="SPICEMODEL" value="NONE" x="25.955" y="94" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="25.955" y="94" size="1.778" layer="27" display="off"/>
 </element>
@@ -1711,7 +1724,7 @@ Source: www.farnell.com/datasheets/49238.pdf</description>
 <attribute name="DESCRIPTION" value=" Integrated Environmental Unit " x="107.2145" y="83" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="Bosch Sensortec" x="107.2145" y="83" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MP" value="BME680" x="107.2145" y="83" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="152.096409375" y="16.4939" size="1.016" layer="25" ratio="11"/>
+<attribute name="NAME" x="152.096409375" y="16.1939" size="1.016" layer="25" ratio="11"/>
 <attribute name="PACKAGE" value="LGA-8 Bosch Tools" x="107.2145" y="83" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="PRICE" value="None" x="107.2145" y="83" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
@@ -1784,10 +1797,10 @@ Source: www.farnell.com/datasheets/49238.pdf</description>
 <attribute name="POPULARITY" value="2" x="137.8" y="-21.1" size="1.778" layer="27" display="off"/>
 <attribute name="TP_SIGNAL_NAME" value="" x="87" y="77.96" size="1" layer="37"/>
 <attribute name="VALUE" x="86.238" y="79.484" size="0.0254" layer="27"/>
-<attribute name="VBAT" value="" x="85.6" y="81.3" size="1.27" layer="25" rot="R180" display="name"/>
+<attribute name="VBAT" value="" x="85.6" y="81.3" size="1.016" layer="25" rot="R180" display="name"/>
 </element>
 <element name="TP4" library="tsc-lib-v1" library_urn="urn:adsk.wipprod:fs.file:vf.79Zey_Q-QuWfGhOIPDBGoQ" package="TP20R" value="TPTP20R" x="87" y="95" smashed="yes">
-<attribute name="GND" value="" x="85.76" y="95.8" size="1.27" layer="25" rot="R180" display="name"/>
+<attribute name="GND" value="" x="85.76" y="95.8" size="1.016" layer="25" rot="R180" display="name"/>
 <attribute name="POPULARITY" value="2" x="142.88" y="-6.6" size="1.778" layer="27" display="off"/>
 <attribute name="TP_SIGNAL_NAME" value="" x="87" y="92.46" size="1" layer="37"/>
 <attribute name="VALUE" x="86.238" y="93.984" size="0.0254" layer="27"/>
@@ -2363,6 +2376,10 @@ Source: www.farnell.com/datasheets/49238.pdf</description>
 <via x="162.05" y="53.25" extent="1-16" drill="0.35" alwaysstop="yes">
 </via>
 <via x="60" y="19.5" extent="1-16" drill="0.35" alwaysstop="yes">
+</via>
+<via x="18" y="46.5" extent="1-16" drill="0.35" alwaysstop="yes">
+</via>
+<via x="20.2" y="47.6" extent="1-16" drill="0.35" alwaysstop="yes">
 </via>
 </signal>
 <signal name="N$1">
