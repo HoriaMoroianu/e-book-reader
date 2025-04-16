@@ -6,6 +6,49 @@ Moroianu Horia-Valentin
 
 ![Diagrama bloc](./Images/block-diagram.jpg)
 
+## Prezentare Generala
+
+Dispozitivul este construit in jurul microcontrolerului **ESP32-C6-WROOM-1-N8**, o componenta performanta ce ofera conectivitate Wi-Fi 6, Bluetooth 5 LE si o arhitectura RISC-V eficienta energetic. Acesta coordoneaza toate componentele periferice prin magistralele **SPI** si **I2C**.
+
+Pentru masurarea timpului, este integrat un modul **RTC DS3231SN**, conectat prin I2C si semnale auxiliare pentru intreruperi si ceas. Pe aceeasi magistrala I2C functioneaza si senzorul **BME688**, responsabil pentru monitorizarea temperaturii, umiditatii, presiunii si compusilor din aer.
+
+Datele pot fi stocate atat pe un **card SD** (SPI), cat si intr-o memorie **Flash NOR de 64MB**, utilizata pentru firmware. Afisajul grafic este realizat printr-un **ePaper Display**, conectat prin SPI, cu pini de control suplimentari pentru functionare eficienta.
+
+Alimentarea este asigurata de un port **USB-C** cu protectie ESD, in combinatie cu un stabilizator **LDO** de 3.3V. Incarcarea bateriei Li-Po este gestionata de un circuit **MCP73831**, iar starea bateriei este monitorizata cu ajutorul unui **MAX17048**, controlat prin I2C.
+
+Dispozitivul include si un conector **Qwiic/Stemma QT**, facilitand extinderea cu senzori compatibili I2C. Butoanele hardware permit controlul direct al functiilor de IO: resetare, boot si control.
+
+## Conectivitate ESP32-C6
+
+| Pin ESP32-C6   | Componenta Asociata                  | Functie                              |
+|----------------|--------------------------------------|--------------------------------------|
+| IO0            | RTC - DS3231SN                       | INT_RTC (Interrupt)                  |
+| IO1            | RTC - DS3231SN                       | Semnal 32KHz                         |
+| IO2            | SD Card, ePaper, Flash               | SPI - MISO                           |
+| IO3            | ePaper Display                       | EPD BUSY                             |
+| IO4            | SD Card                              | SPI - CS                             |
+| IO5            | ePaper Display                       | D/C (Data/Command)                   |
+| IO6            | SD Card, ePaper, Flash               | SPI - SCK                            |
+| IO7            | SD Card, ePaper, Flash               | SPI - MOSI                           |
+| IO9            | Buton Boot                           | IO/BOOT                              |
+| IO10           | ePaper Display                       | SPI - CS                             |
+| IO11           | Flash                                | SPI - Flash CS                       |
+| IO12           | USB                                  | USB D−                               |
+| IO13           | USB                                  | USB D+                               |
+| IO15           | Buton CHANGE                         | IO/CHANGE                            |
+| IO16           | Testpad                              | UART TX Debugg                       |
+| IO17           | Testpad                              | UART RX Debugg                       |
+| IO18           | RTC - DS3231SN                       | RTC Reset                            |
+| IO19           | BME688                               | I2C power line                       |
+| IO20           | ePaper Display                       | EPD Power supply                     |
+| IO21           | RTC, BME688, Qwiic                   | I2C - SDA                            |
+| IO22           | RTC, BME688, Qwiic                   | I2C - SCL                            |
+| IO23           | ePaper Display                       | Reset                                |
+| EN             | Buton Reset                          | IO/RESET                             |
+| 3V3            | Toate modulele                       | Alimentare 3.3V                      |
+| GND            | Toate modulele                       | Masa                                 |
+
+
 ## BOM
 
 
@@ -22,7 +65,7 @@ Moroianu Horia-Valentin
 | MAX17048G+T10         | [Product Page](https://ro.mouser.com/ProductDetail/Analog-Devices-Maxim-Integrated/MAX17048G%2bT10?qs=D7PJwyCwLAoGnnn8jEPRBQ%3D%3D)                                                                | [Datasheet](https://ro.mouser.com/datasheet/2/609/MAX17048_MAX17049-3469099.pdf)                                                           | Battery Management |
 | FH34SRJ-24S-0.5SH(99) | [Product Page](https://ro.mouser.com/ProductDetail/Hirose-Connector/FH34SRJ-24S-0.5SH99?qs=vcbW%252B4%252BSTIpKBl5ap9J8Fw%3D%3D)                                                                   | [Datasheet](https://ro.mouser.com/datasheet/2/185/FH34SRJ_24S_0_5SH_99__CL0580_1255_6_99_2DDrawing_0-1615044.pdf)                          | EPD connector      |
 | MCP73831-2ACI/MC      | [Product Page](https://ro.mouser.com/ProductDetail/Microchip-Technology/MCP73831-2ACI-MC?qs=hH%252BOa0VZEiBneYTVdpuVdg%3D%3D)                                                                      | [Datasheet](https://ro.mouser.com/datasheet/2/268/MCP73831_Family_Data_Sheet_DS20001984H-3441711.pdf)                                      | Battery controller |
-| BME680                | [Product Page](https://ro.mouser.com/ProductDetail/Bosch-Sensortec/BME680?qs=v271MhAjFHjo0yA%2FC4OnDQ%3D%3D)                                                                                       | [Datasheet](https://ro.mouser.com/datasheet/2/783/BST_BME680_DS001-1509608.pdf)                                                            | Sensor             |
+| BME688                | [Product Page](https://ro.mouser.com/ProductDetail/Bosch-Sensortec/BME688?qs=IS%252B4QmGtzzqQoVDscqwx3A%3D%3D)                                                                                       | [Datasheet](https://ro.mouser.com/datasheet/2/783/bst_bme688_fl000-2307034.pdf)                                                            | Sensor             |
 | SD0805S020S1R0        | [Product Page](https://ro.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S020S1R0?qs=jCA%252BPfw4LHbpkAoSnwrdjw%3D%3D)                                                                                 | [Datasheet](https://ro.mouser.com/datasheet/2/40/schottky-3165252.pdf)                                                                     | Schottky diode     |
 | B72540T0300K062       | [Product Page](https://ro.mouser.com/ProductDetail/EPCOS-TDK/B72540T0300K062?qs=dEfas%2FXlABK4d0Dv0OnYYg%3D%3D)                                                                                    | [Datasheet](https://www.tdk-electronics.tdk.com/inf/75/db/CTVS_14/Surge_protection_series.pdf)                                             | Varistor           |
 | ESP32-C6-WROOM-1-N8   | [Product Page](https://ro.mouser.com/ProductDetail/Espressif-Systems/ESP32-C6-WROOM-1-N8?qs=8Wlm6%252BaMh8ST02Gmwp74cw%3D%3D)                                                                      | [Datasheet](https://ro.mouser.com/datasheet/2/891/Espressif_ESP32_C6_WROOM_1__Datasheet_V0_1_PRELIMI-3239987.pdf)                          | ESP32              |
@@ -39,7 +82,9 @@ Moroianu Horia-Valentin
 | C0402C475K8PACTU      | [Product Page](https://ro.mouser.com/c/passive-components/capacitors/ceramic-capacitors/mlccs-multilayer-ceramic-capacitors/multilayer-ceramic-capacitors-mlcc-smd-smt/?case%20code%20-%20in=0402) | [Datasheet](https://ro.mouser.com/datasheet/2/447/KEM_C1006_X5R_SMD-3316465.pdf)                                                           | Capacitor 0402     |
 
 ## Imagini
-![Diagrama bloc](./Images/device.png)
-![Diagrama bloc](./Images/back-case.png)
-![Diagrama bloc](./Images/interior.png)
-![Diagrama bloc](./Images/pcb.png)
+![device](./Images/device.png)
+![back case](./Images/back-case.png)
+![case no lid](./Images/case-no-lid.png)
+![pcb](./Images/pcb.png)
+![pcb-routes](./Images/pcb-routes.png)
+![pcb-design](./Images/pcb-design.png)
